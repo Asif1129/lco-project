@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/back"
+    tools:context=".choice">
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginTop="120dp"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_margin="20dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/doctor1"
+                    android:layout_width="177dp"
+                    android:layout_height="163dp"
+                    app:srcCompat="@drawable/doc" />
+
+                <ImageView
+                    android:id="@+id/computer"
+                    android:layout_width="177dp"
+                    android:layout_height="163dp"
+                    app:srcCompat="@drawable/computer" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_marginLeft="70dp"
+                    android:layout_width="140dp"
+                    android:layout_height="50dp"
+                    android:text="I'm a Doctor"
+                    android:textColor="#665FEE"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:layout_marginLeft="20dp"
+                    android:layout_width="140dp"
+                    android:layout_height="50dp"
+                    android:text="I'm a Comp Eng"
+                    android:textColor="#665FEE"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_margin="20dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/teacher"
+                    android:layout_width="177dp"
+                    android:layout_height="163dp"
+                    app:srcCompat="@drawable/teacher" />
+
+                <ImageView
+                    android:id="@+id/mechanic"
+                    android:layout_width="177dp"
+                    android:layout_height="163dp"
+                    app:srcCompat="@drawable/mechanic" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_marginLeft="50dp"
+                    android:layout_width="140dp"
+                    android:layout_height="50dp"
+                    android:text="I'm a Teacher"
+                    android:textColor="#665FEE"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:layout_marginLeft="40dp"
+                    android:layout_width="140dp"
+                    android:layout_height="50dp"
+                    android:text="I'm a Mechanic"
+                    android:textColor="#665FEE"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_margin="20dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/photographer"
+                    android:layout_width="177dp"
+                    android:layout_height="163dp"
+                    app:srcCompat="@drawable/photo" />
+
+                <ImageView
+                    android:id="@+id/carpenter"
+                    android:layout_width="177dp"
+                    android:layout_height="163dp"
+                    app:srcCompat="@drawable/carpenter" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_marginLeft="70dp"
+                    android:layout_width="140dp"
+                    android:layout_height="50dp"
+                    android:text="I'm a Photographer"
+                    android:textColor="#665FEE"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:layout_marginLeft="40dp"
+                    android:layout_width="140dp"
+                    android:layout_height="50dp"
+                    android:text="I'm a Carpenter"
+                    android:textColor="#665FEE"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_margin="20dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/construct"
+                    android:layout_width="177dp"
+                    android:layout_height="163dp"
+                    app:srcCompat="@drawable/construct" />
+
+                <ImageView
+                    android:id="@+id/driver"
+                    android:layout_width="177dp"
+                    android:layout_height="163dp"
+                    app:srcCompat="@drawable/driver" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_marginLeft="70dp"
+                    android:layout_width="140dp"
+                    android:layout_height="50dp"
+                    android:text="I'm a Buileder"
+                    android:textColor="#665FEE"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:layout_marginLeft="40dp"
+                    android:layout_width="140dp"
+                    android:layout_height="50dp"
+                    android:text="I'm a Driver"
+                    android:textColor="#665FEE"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_margin="20dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/electric"
+                    android:layout_width="177dp"
+                    android:layout_height="163dp"
+                    app:srcCompat="@drawable/electric" />
+
+                <ImageView
+                    android:id="@+id/plumber"
+                    android:layout_width="177dp"
+                    android:layout_height="163dp"
+                    app:srcCompat="@drawable/tap" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_marginLeft="70dp"
+                    android:layout_width="140dp"
+                    android:layout_height="50dp"
+                    android:text="I'm a Doctor"
+                    android:textColor="#665FEE"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:layout_marginLeft="40dp"
+                    android:layout_width="140dp"
+                    android:layout_height="50dp"
+                    android:text="I'm a Carpenter"
+                    android:textColor="#665FEE"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/other"
+                    android:layout_marginLeft="70dp"
+                    android:layout_width="140dp"
+                    android:layout_height="50dp"
+                    android:text="other one"
+                    android:textColor="#665FEE"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+</LinearLayout>
