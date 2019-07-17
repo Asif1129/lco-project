@@ -35,7 +35,7 @@ public class Resigter extends AppCompatActivity {
 
     //vars
     private Context mContext;
-    private String email, name, password,phone,address,city;
+    private String email, name, password,phone,address,city,other;
     private User mUser;
 
 
@@ -97,6 +97,8 @@ public class Resigter extends AppCompatActivity {
                 phone=mphone.getText().toString();
                 address=maddress.getText().toString();
                 city=mcity.getText().toString();
+                other=motheruser.getText().toString();
+
 
                 if (checkInputs(email, name, password, mConfirmPassword.getText().toString())) {
                     if(doStringsMatch(password, mConfirmPassword.getText().toString())){
@@ -220,6 +222,7 @@ public class Resigter extends AppCompatActivity {
         mUser.setCity(city);
         mUser.setEmail(email);
         mUser.setPhone(phone);
+        mUser.getOther(other);
 
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
 

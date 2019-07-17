@@ -8,18 +8,28 @@ public class User {
         private String email;
         private String addr;
         private String city;
+        private  String other;
 
-    public User(String user_id, String name,String phone,String email,String addr,String city) {
+    public User(String user_id, String name,String phone,String email,String addr,String city,String  other) {
         this.user_id = user_id;
         this.name = name;
         this.phone=phone;
         this.email=email;
         this.addr=addr;
         this.city=city;
+        this.other=other;
     }
 
     public User() {
 
+    }
+
+    public String getOther(String other) {
+        return this.other;
+    }
+
+    public void setOther(String other) {
+        this.other = other;
     }
 
     public String getPhone() {
@@ -79,6 +89,8 @@ public class User {
                 ", email='" + email + '\'' +
                 ", addr='" + addr + '\'' +
                 ", city='" + city + '\'' +
+                ", other='" + other + '\'' +
+
 
                 '}';
     }

@@ -10,11 +10,15 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.lco.lcoproject.R;
+import com.mancj.materialsearchbar.MaterialSearchBar;
+
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class Profile_fragments extends Fragment {
+
 
 
     public Profile_fragments() {
@@ -27,6 +31,8 @@ public class Profile_fragments extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_profile_fragments, container, false);
+
+
     }
 
 }
