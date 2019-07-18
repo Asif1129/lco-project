@@ -9,8 +9,9 @@ public class User {
         private String addr;
         private String city;
         private  String other;
+    public  String url;
 
-    public User(String user_id, String name,String phone,String email,String addr,String city,String  other) {
+    public User(String user_id, String name,String phone,String email,String addr,String city,String  other,String url) {
         this.user_id = user_id;
         this.name = name;
         this.phone=phone;
@@ -76,7 +77,15 @@ public class User {
         return name;
     }
 
-        public void setName(String name) {
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public void setName(String name) {
         this.name = name;
     }
 
@@ -90,6 +99,8 @@ public class User {
                 ", addr='" + addr + '\'' +
                 ", city='" + city + '\'' +
                 ", other='" + other + '\'' +
+                ", url='" + url + '\'' +
+
 
 
                 '}';

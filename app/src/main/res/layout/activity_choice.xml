@@ -18,73 +18,73 @@
         >
 
         <LinearLayout
+            android:layout_margin="10dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:padding="5dp">
             <LinearLayout
                 android:weightSum="2"
-                android:padding="5dp"
-
+                android:padding="10dp"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:orientation="horizontal"
                 >
                 <LinearLayout
                     android:layout_weight="1"
-
-
                     android:background="@drawable/border"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:orientation="vertical"
                     >
                     <ImageView
+                        android:layout_gravity="center"
+
                         android:id="@+id/doctor1"
-                        android:layout_width="177dp"
+                        android:layout_width="107dp"
                         android:layout_height="163dp"
                         app:srcCompat="@drawable/doc" />
                     <TextView
+                        android:layout_marginLeft="10dp"
                         android:layout_gravity="center"
                         android:layout_width="140dp"
                         android:layout_height="50dp"
                         android:text="I'm a Doctor"
                         android:textColor="#665FEE"
-                        android:textSize="20dp"
+                        android:textSize="20sp"
                         android:textStyle="bold" />
                 </LinearLayout>
                 <LinearLayout
-                    android:layout_marginLeft="5dp"
+                    android:layout_marginLeft="10dp"
                     android:layout_weight="1"
                     android:background="@drawable/border"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:orientation="vertical"
                     >
                     <ImageView
+                        android:layout_gravity="center"
                         android:id="@+id/computer"
-                        android:layout_width="177dp"
+                        android:layout_width="107dp"
                         android:layout_height="163dp"
                         app:srcCompat="@drawable/computer" />
                     <TextView
+                        android:layout_marginLeft="5dp"
                         android:layout_gravity="center"
                         android:layout_width="140dp"
                         android:layout_height="50dp"
                         android:text="I'm a Comp Eng"
                         android:textColor="#665FEE"
-                        android:textSize="20dp"
+                        android:textSize="20sp"
                         android:textStyle="bold" />
                 </LinearLayout>
-
-
-
 
             </LinearLayout>
 
 
             <LinearLayout
                 android:weightSum="2"
-
+                android:padding="10dp"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:orientation="horizontal">
@@ -92,40 +92,43 @@
                     android:layout_weight="1"
                     android:background="@drawable/border"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:padding="2px">
+                    >
                     <ImageView
                         android:layout_gravity="center"
                         android:id="@+id/teacher"
-                        android:layout_width="150dp"
+                        android:layout_width="107dp"
                         android:layout_height="163dp"
                         app:srcCompat="@drawable/teacher" />
                     <TextView
-                        android:layout_marginLeft="50dp"
+                        android:layout_marginLeft="10dp"
                         android:layout_width="140dp"
                         android:layout_height="50dp"
                         android:text="I'm a Teacher"
                         android:textColor="#665FEE"
                         android:textSize="20dp"
+                        android:layout_gravity="center"
                         android:textStyle="bold" />
                 </LinearLayout>
                 <LinearLayout
-                    android:weightSum="1"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="10dp"
                     android:background="@drawable/border"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:layout_marginLeft="5dp"
                     >
                     <ImageView
+                        android:layout_gravity="center"
                         android:id="@+id/mechanic"
-                        android:layout_width="177dp"
+                        android:layout_width="107dp"
                         android:layout_height="163dp"
                         app:srcCompat="@drawable/mechanic" />
 
                     <TextView
-                        android:layout_marginLeft="40dp"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="5dp"
                         android:layout_width="140dp"
                         android:layout_height="50dp"
                         android:text="I'm a Mechanic"
@@ -141,11 +144,10 @@
 
 
             <LinearLayout
-                android:padding="10dp"
+
                 android:weightSum="2"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-
                 android:orientation="horizontal"
                 >
 
@@ -153,22 +155,24 @@
                     android:layout_weight="1"
                     android:background="@drawable/border"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:orientation="vertical"
                     >
                     <ImageView
                         android:id="@+id/photographer"
-                        android:layout_width="177dp"
+                        android:layout_width="107dp"
                         android:layout_height="163dp"
                         app:srcCompat="@drawable/photo"
                         android:layout_gravity="center"/>
 
                     <TextView
+                        android:layout_marginLeft="10dp"
+                       android:layout_gravity="center"
                         android:layout_width="140dp"
                         android:layout_height="50dp"
                         android:text="I'm a Photographer"
                         android:textColor="#665FEE"
-                        android:textSize="20dp"
+                        android:textSize="20sp"
                         android:textStyle="bold" />
 
                 </LinearLayout>
@@ -177,16 +181,17 @@
                     android:layout_weight="1"
                     android:background="@drawable/border"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:layout_marginLeft="5dp">
+                    android:layout_marginLeft="10dp">
                     <ImageView
+                        android:layout_gravity="center"
                         android:id="@+id/carpenter"
-                        android:layout_width="177dp"
+                        android:layout_width="107dp"
                         android:layout_height="163dp"
                         app:srcCompat="@drawable/carpenter" />
                     <TextView
-                        android:layout_marginLeft="40dp"
+                        android:layout_marginLeft="20dp"
                         android:layout_width="140dp"
                         android:layout_height="50dp"
                         android:text="I'm a Carpenter"
@@ -198,34 +203,28 @@
 
             </LinearLayout>
 
-            <LinearLayout
-                android:padding="10dp"
-                android:weightSum="2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
 
-
-            </LinearLayout>
             <LinearLayout
                 android:weightSum="2"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-
+                android:padding="10dp"
                 android:orientation="horizontal">
                 <LinearLayout
+                    android:layout_weight="1"
                     android:background="@drawable/border"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:orientation="vertical">
                     <ImageView
+                        android:layout_gravity="center"
                         android:id="@+id/construct"
-                        android:layout_width="177dp"
+                        android:layout_width="107dp"
                         android:layout_height="163dp"
                         app:srcCompat="@drawable/construct" />
 
                     <TextView
-                        android:layout_marginLeft="70dp"
+                        android:layout_marginLeft="20dp"
                         android:layout_width="140dp"
                         android:layout_height="50dp"
                         android:text="I'm a Buileder"
@@ -234,19 +233,21 @@
                         android:textStyle="bold" />
                 </LinearLayout>
                 <LinearLayout
+                    android:layout_weight="1"
                     android:background="@drawable/border"
-                    android:layout_marginLeft="5dp"
+                    android:layout_marginLeft="10dp"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:orientation="vertical">
                     <ImageView
+                        android:layout_gravity="center"
                         android:id="@+id/driver"
-                        android:layout_width="177dp"
+                        android:layout_width="107dp"
                         android:layout_height="163dp"
                         app:srcCompat="@drawable/driver" />
 
                     <TextView
-                        android:layout_marginLeft="40dp"
+                        android:layout_marginLeft="20dp"
                         android:layout_width="140dp"
                         android:layout_height="50dp"
                         android:text="I'm a Driver"
@@ -263,24 +264,26 @@
 
             <LinearLayout
                 android:padding="10dp"
-                android:layout_weight="2"
+                android:weightSum="2"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:orientation="horizontal">
 
 
                 <LinearLayout
+                    android:layout_weight="1"
                     android:background="@drawable/border"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:orientation="vertical">
                     <ImageView
+                        android:layout_gravity="center"
                         android:id="@+id/electric"
-                        android:layout_width="177dp"
+                        android:layout_width="107dp"
                         android:layout_height="163dp"
                         app:srcCompat="@drawable/electric" />
                     <TextView
-                        android:layout_marginLeft="70dp"
+                        android:layout_marginLeft="20dp"
                         android:layout_width="140dp"
                         android:layout_height="50dp"
                         android:text="I'm a Doctor"
@@ -290,18 +293,20 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:layout_weight="1"
                     android:background="@drawable/border"
                     android:layout_marginLeft="5dp"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:orientation="vertical">
                     <ImageView
+                        android:layout_gravity="center"
                         android:id="@+id/plumber"
-                        android:layout_width="177dp"
+                        android:layout_width="107dp"
                         android:layout_height="163dp"
                         app:srcCompat="@drawable/tap" />
                     <TextView
-                        android:layout_marginLeft="40dp"
+                        android:layout_marginLeft="20dp"
                         android:layout_width="140dp"
                         android:layout_height="50dp"
                         android:text="I'm a Carpenter"
@@ -309,13 +314,7 @@
                         android:textSize="20dp"
                         android:textStyle="bold" />
                 </LinearLayout>
-
-
-
-
             </LinearLayout>
-
-
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
@@ -329,12 +328,7 @@
                     android:textColor="#665FEE"
                     android:textSize="20dp"
                     android:textStyle="bold" />
-
-
             </LinearLayout>
         </LinearLayout>
-
     </ScrollView>
-
-
 </LinearLayout>

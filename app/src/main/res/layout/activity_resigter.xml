@@ -30,11 +30,36 @@
             android:text="Create a New Account"
             android:textColor="@android:color/black"
             android:textSize="20sp" />
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imageView"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:padding="2dp"
+                android:layout_gravity="center"
+                android:src="@mipmap/ic_launcher_round"
+                app:civ_border_color="@color/colorPrimaryDark"
+                app:civ_border_width="1dp" />
+
+            <Button
+                android:id="@+id/upload_image"
+                android:background="@drawable/button"
+                android:text="Upload Image"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp" />
+
+        </LinearLayout>
+
+
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+
             android:focusable="true"
             android:focusableInTouchMode="true"
             android:textColorHint="@color/colorAccent">
@@ -43,7 +68,7 @@
                 android:id="@+id/input_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="1dp"
                 android:drawableLeft="@drawable/ic_email_black_24dp"
                 android:hint="Email"
                 android:inputType="textEmailAddress" />
@@ -179,7 +204,7 @@
         <Button
             android:id="@+id/btn_register"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:layout_marginTop="25dp"
             android:layout_marginBottom="25dp"
             android:background="@drawable/button"
