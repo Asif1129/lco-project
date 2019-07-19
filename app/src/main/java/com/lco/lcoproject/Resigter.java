@@ -1,6 +1,7 @@
 package com.lco.lcoproject;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -43,24 +44,27 @@ import com.google.firebase.storage.UploadTask;
 import com.lco.lcoproject.Model.User;
 
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class Resigter extends AppCompatActivity {
-    Button upload_image;
-    ImageView imageView;
-    private final static int PICK_IMAGE = 101;
+    StorageReference postrefrance;
+    Uri uri;
+    CircleImageView profile_image;
     private static final String TAG = "RegisterActivity";
     FirebaseUser firebaseUser;
     DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
 
-    //Firebase
+
     private FirebaseAuth.AuthStateListener mAuthListener;
 
-    //widgets
+
     private EditText mEmail, mName,mPassword, mConfirmPassword,mphone,maddress,mcity,motheruser;
     private Button mRegister;
     private ProgressBar mProgressBar;
 
-    //vars
+
     private Context mContext;
     private String email, name, password,phone,address,city,other;
     private User mUser;
@@ -70,8 +74,8 @@ public class Resigter extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resigter);
-        imageView=findViewById(R.id.imageView);
-        upload_image=findViewById(R.id.upload_image);
+        profile_image=findViewById(R.id.imageView);
+       // upload_image=findViewById(R.id.upload_image);
         mRegister = findViewById(R.id.btn_register);
         mEmail = findViewById(R.id.input_email);
         mPassword = findViewById(R.id.input_password);
@@ -83,7 +87,9 @@ public class Resigter extends AppCompatActivity {
         motheruser = findViewById(R.id.input_choice);
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         databaseReference = FirebaseDatabase.getInstance().getReference();
-        upload_image.setOnClickListener(new View.OnClickListener() {
+
+        ///////////////////image
+        profile_image.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 pickImage();
@@ -121,6 +127,31 @@ public class Resigter extends AppCompatActivity {
         motheruser.setText(str1);
         motheruser.setText(str);
 
+    }
+
+    void pickImage()
+    {
+        Intent intent = new Intent();
+        intent.setAction(Intent.ACTION_GET_CONTENT);
+        intent.setType("image/*");
+        //intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivityForResult(Intent.createChooser(intent,"select image"),1002);
+    }
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if(requestCode==1002){
+            try {
+                uri=data.getData();
+                Bitmap bm= MediaStore.Images.Media.getBitmap(getContentResolver(),data.getData());
+                profile_image.setImageBitmap(bm);
+            } catch (IOException e) {
+                e.printStackTrace();
+                Toast.makeText(getApplicationContext(), ""+e, Toast.LENGTH_SHORT).show();
+            }
+        }
+        //the end  onActivityResult
     }
     private void init(){
 
@@ -260,7 +291,7 @@ public class Resigter extends AppCompatActivity {
         mUser.setCity(city);
         mUser.setEmail(email);
         mUser.setPhone(phone);
-        mUser.getOther(other);
+        mUser.setOther(other);
 
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
 
@@ -322,115 +353,7 @@ public class Resigter extends AppCompatActivity {
             FirebaseAuth.getInstance().removeAuthStateListener(mAuthListener);
         }
     }
-    private void pickImage() {
-        if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-            requestStoragePermission();
-        } else {
-            Intent getIntent = new Intent(Intent.ACTION_GET_CONTENT);
-            getIntent.setType("image/*");
-            Intent chooserIntent = Intent.createChooser(getIntent, "Select Image");
-            startActivityForResult(chooserIntent, PICK_IMAGE);
-        }
-    }
 
-    @TargetApi(Build.VERSION_CODES.M)
-    private void requestStoragePermission() {
-        if (!ActivityCompat.shouldShowRequestPermissionRationale(this, android.Manifest.permission.WRITE_EXTERNAL_STORAGE))
-            ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.WRITE_EXTERNAL_STORAGE}, 0);
-        else
-            ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.WRITE_EXTERNAL_STORAGE}, 0);
-    }
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        switch (requestCode) {
-            case PICK_IMAGE: {
-                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    Intent getIntent = new Intent(Intent.ACTION_GET_CONTENT);
-                    getIntent.setType("image/*");
-                    Intent chooserIntent = Intent.createChooser(getIntent, "Select Image");
-                    startActivityForResult(chooserIntent, PICK_IMAGE);
-                } else {
-                    Toast.makeText(this, "Allow permissions to continue..", Toast.LENGTH_SHORT).show();
-                    ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.WRITE_EXTERNAL_STORAGE}, 0);
-                }
-                return;
-            }
-        }
-    }
-
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (resultCode == RESULT_OK && data != null && data.getData() != null) {
-            Uri uri = data.getData();
-            String[] filePathColumn = {MediaStore.Images.Media.DATA};
-            Cursor cursor = getContentResolver().query(uri, filePathColumn, null, null, null);
-            cursor.moveToFirst();
-            int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
-            String imgPath = cursor.getString(columnIndex);
-            cursor.close();
-            try {
-              FirebaseStorage storage = FirebaseStorage.getInstance();
-               StorageReference storageRef = storage.getReference();
-                Log.d("ImagePath", " imagePath = " + imgPath);
-
-                /*
-                 * Converts image into bytes to decrease the quality and size of image
-                 * */
-                Bitmap b = BitmapFactory.decodeFile(imgPath);
-                ByteArrayOutputStream baos = new ByteArrayOutputStream();
-                b.compress(Bitmap.CompressFormat.JPEG, 50, baos);
-                byte[] file = baos.toByteArray();
-
-                String timestamp = String.valueOf(System.currentTimeMillis());
-
-                StorageReference reference = storageRef.child("upload_images").child(timestamp + ".jpg");
-                UploadTask uploadTask = reference.putBytes(file);
-                uploadTask(uploadTask, timestamp);
-
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-        super.onActivityResult(requestCode, resultCode, data);
-    }
-
-    private void uploadTask(UploadTask uploadTask, final String image_name) {
-        final ProgressDialog progressDialog = new ProgressDialog(this);
-        progressDialog.setMessage("Uploading Image...");
-        progressDialog.show();
-        // Register observers to listen for when the download is done or if it fails
-        uploadTask.addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
-            @Override
-            @SuppressWarnings("VisibleForTests")
-            public void onProgress(UploadTask.TaskSnapshot taskSnapshot) {
-                double progress = (100.0 * taskSnapshot.getBytesTransferred()) / taskSnapshot.getTotalByteCount();
-                progressDialog.setMessage("Uploading Image..." + (int) progress + "%");
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception exception) {
-                progressDialog.dismiss();
-            }
-        }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-            @Override
-            @SuppressWarnings("VisibleForTests")
-            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                progressDialog.dismiss();
-                Uri downloadUrl = taskSnapshot.getDownloadUrl().getResult();
-                /*
-                 * load image into imageView
-                 * */
-                Glide.with(Resigter.this).load(downloadUrl).asBitmap().placeholder(R.mipmap.ic_launcher_round).into(imageView);
-
-                /*
-                 * Add image name in your database. Useful for folder deletion
-                 * */
-                databaseReference.child("upload_images").child(image_name).setValue(true);
-            }
-        });
-    }
 }
 
 

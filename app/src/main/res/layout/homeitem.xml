@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_margin="5dp"
+    android:padding="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:background="@drawable/border"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:src="@drawable/asifkhanaa"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            app:civ_border_color="@color/colorAccent"
+            app:civ_border_width="2dp"
+            app:civ_border_overlay="true"
+            android:id="@+id/homeitemimage"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Title"
+            android:textColorHint="@color/maincolor"
+            android:textSize="25sp"
+            android:layout_gravity="center"
+            android:id="@+id/homeitemtitle"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="This is my discription"
+            android:textColorHint="@color/civborder"
+            android:textSize="20sp"
+android:layout_gravity="center"
+            android:id="@+id/homeitemdesc"/>
+    </LinearLayout>
+
+</LinearLayout>

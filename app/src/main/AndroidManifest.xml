@@ -2,12 +2,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.lco.lcoproject">
 
+    <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:allowBackup="true"
@@ -16,18 +19,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".Fragments.Home_Bottom_navbar"
-            android:label="@string/title_activity_home__bottom_navbar"></activity>
-        <activity android:name=".choice" />
-        <activity android:name=".Resigter" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".searchDetails"></activity>
+        <activity android:name=".ViewDetailsUser" />
+        <activity android:name=".LoginSignup" />
+        <activity android:name=".splash_screen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".Fragments.Home_Bottom_navbar"
+            android:label="@string/title_activity_home__bottom_navbar" />
+        <activity android:name=".choice" />
+        <activity android:name=".Resigter" />
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>

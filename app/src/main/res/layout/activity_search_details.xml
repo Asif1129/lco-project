@@ -4,10 +4,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
     android:background="@drawable/back"
-    tools:context=".Resigter">
-
+    android:layout_height="match_parent"
+    tools:context=".searchDetails">
     <LinearLayout
         android:layout_width="366dp"
         android:layout_height="616dp"
@@ -27,7 +26,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
-            android:text="Create a New Account"
+            android:text="Details"
             android:textColor="@android:color/black"
             android:textSize="20sp" />
         <LinearLayout
@@ -45,12 +44,6 @@
                 app:civ_border_color="@color/colorPrimaryDark"
                 app:civ_border_width="1dp" />
 
-            <Button
-                android:id="@+id/upload_image"
-                android:background="@drawable/button"
-                android:text="Upload Image"
-                android:layout_width="wrap_content"
-                android:layout_height="40dp" />
 
         </LinearLayout>
 
@@ -64,11 +57,13 @@
             android:focusableInTouchMode="true"
             android:textColorHint="@color/colorAccent">
 
-            <EditText
-                android:id="@+id/input_email"
+            <TextView
+                android:textSize="20dp"
+                android:textColor="@color/colorAccent"
+                android:id="@+id/search_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="1dp"
+                android:layout_marginTop="20dp"
                 android:drawableLeft="@drawable/ic_email_black_24dp"
                 android:hint="Email"
                 android:inputType="textEmailAddress" />
@@ -83,8 +78,10 @@
             android:focusableInTouchMode="true"
             android:textColorHint="@color/colorAccent">
 
-            <EditText
-                android:id="@+id/input_name"
+            <TextView
+                android:textSize="20dp"
+                android:textColor="@color/colorAccent"
+                android:id="@+id/search_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
@@ -102,8 +99,10 @@
             android:focusableInTouchMode="true"
             android:textColorHint="@color/colorAccent">
 
-            <EditText
-                android:id="@+id/input_phone"
+            <TextView
+                android:textSize="20dp"
+                android:textColor="@color/colorAccent"
+                android:id="@+id/search_phone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
@@ -120,8 +119,10 @@
             android:focusableInTouchMode="true"
             android:textColorHint="@color/colorAccent">
 
-            <EditText
-                android:id="@+id/input_city"
+            <TextView
+                android:textSize="20dp"
+                android:textColor="@color/colorAccent"
+                android:id="@+id/search_city"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
@@ -137,8 +138,10 @@
             android:focusableInTouchMode="true"
             android:textColorHint="@color/colorAccent">
 
-            <EditText
-                android:id="@+id/input_addr"
+            <TextView
+                android:textSize="20dp"
+                android:textColor="@color/colorAccent"
+                android:id="@+id/search_addr"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
@@ -148,22 +151,7 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:focusable="true"
-            android:focusableInTouchMode="true"
-            android:textColorHint="@color/colorAccent">
 
-            <EditText
-                android:id="@+id/input_password"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:drawableLeft="@drawable/ic_lock_outline_black_24dp"
-                android:hint="Password"
-                android:inputType="textPassword" />
-        </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
@@ -172,50 +160,65 @@
             android:focusableInTouchMode="true"
             android:textColorHint="@color/colorAccent">
 
-            <EditText
-                android:id="@+id/input_confirm_password"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:drawableLeft="@drawable/ic_lock_black_24dp"
-                android:hint="Confirm Password"
-                android:inputType="textPassword" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:focusable="true"
-            android:focusableInTouchMode="true"
-            android:textColorHint="@color/colorAccent">
-
-            <EditText
-                android:id="@+id/input_choice"
+            <TextView
+                android:textSize="20dp"
+                android:textColor="@color/colorAccent"
+                android:id="@+id/search_choice"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
                 android:drawableLeft="@drawable/ic_perm_identity_black_24dp"
-                android:hint="who are u??"
+                android:hint="Profession"
                 android:inputType="text" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <Button
-            android:id="@+id/btn_register"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginTop="25dp"
-            android:layout_marginBottom="25dp"
-            android:background="@drawable/button"
-            android:padding="12dp"
-            android:text="Register" />
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/search_call"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="88dp"
+                app:srcCompat="@drawable/call" />
+
+            <ImageView
+                android:id="@+id/search_gmail"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="175dp"
+                android:layout_marginBottom="87dp"
+                app:srcCompat="@drawable/geammm" />
+
+            <ImageView
+                android:id="@+id/search_googlemap"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="94dp"
+                android:layout_marginBottom="94dp"
+                app:srcCompat="@drawable/google" />
+
+        </RelativeLayout>
+
     </LinearLayout>
 
-    <ProgressBar
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:id="@+id/progressBar"
-        android:layout_centerInParent="true"/>
+
+    <ImageView
+        android:id="@+id/search_message"
+        android:layout_width="60dp"
+        android:layout_height="62dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="59dp"
+        android:layout_marginBottom="101dp"
+        app:srcCompat="@drawable/message" />
+
 
 </RelativeLayout>

@@ -9,7 +9,7 @@ public class User {
         private String addr;
         private String city;
         private  String other;
-    public  String url;
+        public  String url;
 
     public User(String user_id, String name,String phone,String email,String addr,String city,String  other,String url) {
         this.user_id = user_id;
@@ -19,6 +19,7 @@ public class User {
         this.addr=addr;
         this.city=city;
         this.other=other;
+        this.url=url;
     }
 
     public User() {
@@ -100,9 +101,6 @@ public class User {
                 ", city='" + city + '\'' +
                 ", other='" + other + '\'' +
                 ", url='" + url + '\'' +
-
-
-
                 '}';
     }
 }

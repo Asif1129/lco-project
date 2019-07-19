@@ -38,7 +38,7 @@ public class Search_fragments extends Fragment {
     FirebaseUser firebaseUser;
     ArrayList<String> fullNameList;
     ArrayList<String> userNameList;
-    //ArrayList<String> profilePicList;
+    ArrayList<String> profilePicList;
     SearchAdapter searchAdapter;
 
 
@@ -69,7 +69,7 @@ public class Search_fragments extends Fragment {
          * */
         fullNameList = new ArrayList<>();
         userNameList = new ArrayList<>();
-       // profilePicList = new ArrayList<>();
+        profilePicList = new ArrayList<>();
 
         search_edit_text.addTextChangedListener(new TextWatcher() {
             @Override
@@ -90,7 +90,7 @@ public class Search_fragments extends Fragment {
                      * */
                     fullNameList.clear();
                     userNameList.clear();
-                   // profilePicList.clear();
+                    profilePicList.clear();
                     recyclerView.removeAllViews();
                 }
             }
@@ -108,7 +108,7 @@ public class Search_fragments extends Fragment {
                  * */
                 fullNameList.clear();
                 userNameList.clear();
-                //profilePicList.clear();
+                profilePicList.clear();
                 recyclerView.removeAllViews();
 
                 int counter = 0;
@@ -120,17 +120,18 @@ public class Search_fragments extends Fragment {
                     String uid = snapshot.getKey();
                     String full_name = snapshot.child("name").getValue(String.class);
                     String user_phone= snapshot.child("phone").getValue(String.class);
+                    String profile_pic=snapshot.child("Image").getValue(String.class);
 
 
                     if (full_name.toLowerCase().contains(searchedString.toLowerCase())) {
                         fullNameList.add(full_name);
                         userNameList.add(user_phone);
-                       // profilePicList.add(profile_pic);
+                       profilePicList.add(profile_pic);
                         counter++;
                     } else if (user_phone.toLowerCase().contains(searchedString.toLowerCase())) {
                         fullNameList.add(full_name);
                         userNameList.add(user_phone);
-                      //  profilePicList.add(profile_pic);
+                       profilePicList.add(profile_pic);
                         counter++;
                     }
 
@@ -141,7 +142,7 @@ public class Search_fragments extends Fragment {
                         break;
                 }
 
-                searchAdapter = new SearchAdapter(getContext(), fullNameList, userNameList);
+                searchAdapter = new SearchAdapter(getContext(), fullNameList, userNameList,profilePicList);
                 recyclerView.setAdapter(searchAdapter);
             }
 
