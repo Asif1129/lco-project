@@ -1,6 +1,7 @@
 package com.lco.lcoproject.Fragments;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -14,6 +15,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.toolbox.Volley;
 import com.google.firebase.auth.FirebaseAuth;
@@ -24,7 +28,11 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.lco.lcoproject.Adapter.SearchAdapter;
+import com.lco.lcoproject.MainActivity;
 import com.lco.lcoproject.R;
+import com.lco.lcoproject.Resigter;
+import com.lco.lcoproject.SearchSee;
+import com.lco.lcoproject.resetPassword;
 
 import java.util.ArrayList;
 
@@ -40,6 +48,8 @@ public class Search_fragments extends Fragment {
     ArrayList<String> userNameList;
     ArrayList<String> profilePicList;
     SearchAdapter searchAdapter;
+    ImageView img1,img2,img3,img4,img5,img6;
+    TextView text1,text2,text3,text4,text5,text6,text7;
 
 
     public Search_fragments() {
@@ -56,6 +66,19 @@ public class Search_fragments extends Fragment {
 
         search_edit_text = view.findViewById(R.id.search_edit_text);
         recyclerView = view.findViewById(R.id.recyclerView);
+        img1=view.findViewById(R.id.see_builder);
+        img2=view.findViewById(R.id.see_camera);
+        img3=view.findViewById(R.id.see_computer);
+        img4=view.findViewById(R.id.see_electric);
+        img5=view.findViewById(R.id.see_doctor);
+        img6=view.findViewById(R.id.see_mechanic);
+        text1=view.findViewById(R.id.text_builder);
+        text2=view.findViewById(R.id.text_camera);
+        text3=view.findViewById(R.id.text_computer);
+        text4=view.findViewById(R.id.text_electric);
+        text5=view.findViewById(R.id.text_doctor);
+        text6=view.findViewById(R.id.text_mechanic);
+        text7=view.findViewById(R.id.seeall);
 
         databaseReference = FirebaseDatabase.getInstance().getReference();
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
@@ -64,6 +87,92 @@ public class Search_fragments extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.addItemDecoration(new DividerItemDecoration(getContext(), LinearLayoutManager.VERTICAL));
 
+        /*
+          *
+          searchsee
+         */
+
+
+       img1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                startActivity(new Intent(getContext(), SearchSee.class));
+            }
+
+        });
+       img2.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+               startActivity(new Intent(getContext(), SearchSee.class));
+           }
+       });
+        img3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getContext(), SearchSee.class));
+            }
+        });
+        img4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getContext(), SearchSee.class));
+            }
+        });
+        img5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getContext(), SearchSee.class));
+            }
+        });
+        img6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getContext(), SearchSee.class));
+            }
+        });
+        text1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getContext(), SearchSee.class));
+            }
+        });
+        text2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getContext(), SearchSee.class));
+            }
+        });
+        text3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getContext(), SearchSee.class));
+            }
+        });
+        text4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getContext(), SearchSee.class));
+            }
+        });
+        text5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getContext(), SearchSee.class));
+            }
+        });
+        text6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getContext(), SearchSee.class));
+            }
+        });
+        text7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getContext(), SearchSee.class));
+            }
+        });
         /*
          * Create a array list for each node you want to use
          * */

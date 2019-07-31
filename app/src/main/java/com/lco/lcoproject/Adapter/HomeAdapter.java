@@ -16,6 +16,8 @@ import com.lco.lcoproject.ViewDetailsUser;
 
 import java.util.List;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.HomeViewAdapter> {
     Context context;
     List<User>list;
@@ -39,6 +41,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.HomeViewAdapte
         holder.titleHome.setText(data.getName());
         holder.descHOme.setText(data.getCity());
 
+
     }
 
     @Override
@@ -48,11 +51,14 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.HomeViewAdapte
 
     public class HomeViewAdapter extends RecyclerView.ViewHolder{
         TextView titleHome,descHOme;
+        CircleImageView imageViewCirle;
+
 
         public HomeViewAdapter(@NonNull View itemView) {
             super(itemView);
             titleHome=itemView.findViewById(R.id.homeitemtitle);
             descHOme=itemView.findViewById(R.id.homeitemdesc);
+            imageViewCirle=itemView.findViewById(R.id.homeitemimage);
 itemView.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View view) {

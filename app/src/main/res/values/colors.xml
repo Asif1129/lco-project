@@ -6,4 +6,15 @@
     <color name="civborder">#1E9FD8</color>
     <color name="maincolor">#9C5CF5</color>
     <color name="buttonback">#F0FDFD</color>
+    <color name="color1">#ACD3B8</color>
+    <color name="color2">#D8FBD0</color>
+    <color name="color3">#A6E5E1</color>
+    <color name="color4">#F0F8FF</color>
+    <color name="color5">#D7E6F1</color>
+    <color name="color6">#BFD3E2</color>
+    <color name="color7">#A7C1D4</color>
+    <color name="color8">#82A5BE</color>
+    <color name="color9">#E6FFF8</color>
+    <color name="color10">#AAFBDC</color>
+
 </resources>

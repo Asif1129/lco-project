@@ -23,13 +23,15 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.lco.lcoproject.Fragments.Home_Bottom_navbar;
 
+import es.dmoral.toasty.Toasty;
+
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "LoginActivity";
 
 
     private FirebaseAuth.AuthStateListener mAuthListener;
 
-    private TextView mRegister;
+    private TextView mRegister,forgotpassword;
     private EditText mEmail, mPassword;
     private Button mLogin;
     private ProgressBar mProgressBar;
@@ -43,6 +45,14 @@ public class MainActivity extends AppCompatActivity {
         mEmail =  findViewById(R.id.input_email);
         mPassword = findViewById(R.id.input_password);
         mLogin =  findViewById(R.id.btn_login);
+        forgotpassword=findViewById(R.id.link_forgotpassword);
+         forgotpassword.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View view) {
+                 Intent intent = new Intent(MainActivity.this, resetPassword.class);
+                 startActivity(intent);
+             }
+         });
 
 
 
@@ -76,12 +86,14 @@ public class MainActivity extends AppCompatActivity {
                             }).addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
-                            Toast.makeText(MainActivity.this, "Authentication Failed", Toast.LENGTH_SHORT).show();
+                            Toasty.error(MainActivity.this, "Authentication Failed", Toast.LENGTH_SHORT, true).show();
+                           // Toast.makeText(MainActivity.this, "Authentication Failed", Toast.LENGTH_SHORT).show();
                             hideProgressBar();
                         }
                     });
                 }else{
-                    Toast.makeText(MainActivity.this, "You didn't fill in all the fields.", Toast.LENGTH_SHORT).show();
+                    Toasty.warning(MainActivity.this, "You didn't fill in all the fields.", Toast.LENGTH_SHORT, true).show();
+                  //  Toast.makeText(MainActivity.this, "You didn't fill in all the fields.", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -91,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
 
 
-                Intent intent = new Intent(MainActivity.this, choice.class);
+                Intent intent = new Intent(MainActivity.this,Choice_new.class);
                 startActivity(intent);
             }
         });
@@ -139,7 +151,8 @@ public class MainActivity extends AppCompatActivity {
 
                     //check if email is verified
                     if(user.isEmailVerified()){
-                        Toast.makeText(MainActivity.this, "Authenticated with: " + user.getEmail(), Toast.LENGTH_SHORT).show();
+                        Toasty.success(MainActivity.this, "Authenticated with: " + user.getEmail(), Toast.LENGTH_SHORT, true).show();
+                       // Toast.makeText(MainActivity.this, "Authenticated with: " + user.getEmail(), Toast.LENGTH_SHORT).show();
 
                         Intent intent = new Intent(MainActivity.this, Home_Bottom_navbar.class);
                         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
@@ -147,7 +160,8 @@ public class MainActivity extends AppCompatActivity {
                         finish();
 
                     }else{
-                        Toast.makeText(MainActivity.this, "Email is not Verified\nCheck your Inbox", Toast.LENGTH_SHORT).show();
+                        Toasty.info(MainActivity.this, "Email is not Verified\nCheck your Inbox", Toast.LENGTH_SHORT, true).show();
+                        //Toast.makeText(MainActivity.this, "Email is not Verified\nCheck your Inbox", Toast.LENGTH_SHORT).show();
                         FirebaseAuth.getInstance().signOut();
                     }
 

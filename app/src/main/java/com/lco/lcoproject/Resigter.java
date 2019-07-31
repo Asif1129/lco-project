@@ -47,6 +47,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
 import de.hdodenhof.circleimageview.CircleImageView;
+import es.dmoral.toasty.Toasty;
 
 public class Resigter extends AppCompatActivity {
     StorageReference postrefrance;
@@ -104,7 +105,7 @@ public class Resigter extends AppCompatActivity {
         initProgressBar();
         setupFirebaseAuth();
         init();
-
+       motheruser.setText (getIntent().getStringExtra("param"));
         Intent intent = getIntent();
         String str = intent.getStringExtra("key");
         String str1 = intent.getStringExtra("key");
@@ -173,10 +174,12 @@ public class Resigter extends AppCompatActivity {
                     if(doStringsMatch(password, mConfirmPassword.getText().toString())){
                         registerNewEmail(email, password);
                     }else{
-                        Toast.makeText(mContext, "passwords do not match", Toast.LENGTH_SHORT).show();
+                        Toasty.error(mContext, "passwords do not match", Toast.LENGTH_SHORT, true).show();
+                       // Toast.makeText(mContext, "passwords do not match", Toast.LENGTH_SHORT).show();
                     }
                 }else{
-                    Toast.makeText(mContext, "All fields must be filled", Toast.LENGTH_SHORT).show();
+                    Toasty.warning(mContext, "All fields must be filled", Toast.LENGTH_SHORT, true).show();
+                   // Toast.makeText(mContext, "All fields must be filled", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -193,7 +196,9 @@ public class Resigter extends AppCompatActivity {
     private boolean checkInputs(String email, String username, String password, String confirmPassword){
        // Log.d(TAG, "checkInputs: checking inputs for null values");
         if(email.equals("") || username.equals("") || password.equals("") || confirmPassword.equals("")){
-            Toast.makeText(mContext, "All fields must be filled out", Toast.LENGTH_SHORT).show();
+            Toasty.warning(mContext, "All fields must be filled", Toast.LENGTH_SHORT, true).show();
+
+           // Toast.makeText(mContext, "All fields must be filled out", Toast.LENGTH_SHORT).show();
             return false;
         }
         return true;
@@ -265,8 +270,10 @@ public class Resigter extends AppCompatActivity {
                             addNewUser();
                         }
                         if (!task.isSuccessful()) {
-                            Toast.makeText(mContext, "Someone with that email already exists",
-                                    Toast.LENGTH_SHORT).show();
+                            Toasty.warning(mContext, "Someone with that email already exists",
+                                    Toast.LENGTH_SHORT, true).show();
+                           // Toast.makeText(mContext, "Someone with that email already exists",
+                                  //  Toast.LENGTH_SHORT).show();
                             hideProgressBar();
 
                         }
@@ -319,7 +326,8 @@ public class Resigter extends AppCompatActivity {
 
                             }
                             else{
-                                Toast.makeText(mContext, "couldn't send email", Toast.LENGTH_SHORT).show();
+                                Toasty.error(mContext, "couldn't send email", Toast.LENGTH_SHORT, true).show();
+                               // Toast.makeText(mContext, "couldn't send email", Toast.LENGTH_SHORT).show();
                                 hideProgressBar();
                             }
                         }

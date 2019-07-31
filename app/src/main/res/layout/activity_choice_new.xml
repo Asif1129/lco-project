@@ -5,9 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@drawable/back"
-    tools:context=".choice">
+    tools:context=".Choice_new">
 
     <ScrollView
         android:id="@+id/scrollView"
@@ -167,7 +166,7 @@
 
                     <TextView
                         android:layout_marginLeft="10dp"
-                       android:layout_gravity="center"
+                        android:layout_gravity="center"
                         android:layout_width="140dp"
                         android:layout_height="50dp"
                         android:text="I'm a Photographer"
