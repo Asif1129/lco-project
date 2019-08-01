@@ -14,15 +14,15 @@
         android:layout_margin="20dp"
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <TextView
-            android:textStyle="bold"
-            android:textColor="@color/colorAccent"
-            android:text="Profile"
-            android:textSize="50dp"
-            android:gravity="center"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+        android:layout_height="match_parent">
+        <!--<TextView-->
+            <!--android:textStyle="bold"-->
+            <!--android:textColor="@color/colorAccent"-->
+            <!--android:text="Profile"-->
+            <!--android:textSize="50dp"-->
+            <!--android:gravity="center"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content" />-->
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/imageView"
             android:layout_margin="10dp"
@@ -41,7 +41,7 @@
             android:drawableLeft="@drawable/ic_edit_black_24dp"
             android:id="@+id/editdetail"
             android:textColor="@color/colorAccent"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="60dp"
             android:text="Edit your Details"
             android:gravity="center"
             android:textSize="20sp"
@@ -65,62 +65,53 @@
                 android:textStyle="bold" />
 
         </LinearLayout>
+        <!--<TextView-->
+            <!--android:drawableLeft="@drawable/ic_star_black_24dp"-->
+            <!--android:textSize="20sp"-->
+            <!--android:gravity="center"-->
+            <!--android:textColor="@color/colorAccent"-->
+            <!--android:textStyle="bold"-->
+            <!--android:text="Rate Us"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content" />-->
+        <!--<RatingBar-->
+            <!--android:layout_gravity="center"-->
+            <!--android:layout_marginTop="20dp"-->
+            <!--android:id="@+id/ratingBar1"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content" />-->
+        <!--<TextView-->
+            <!--android:textColor="@color/colorAccent"-->
+            <!--android:id="@+id/tvRatingScale"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:layout_marginTop="10dp"-->
+            <!--android:text="Awesome. I loved it"-->
+            <!--android:textSize="16sp"-->
+            <!--android:textStyle="bold" />-->
         <TextView
-            android:drawableLeft="@drawable/ic_star_black_24dp"
-            android:textSize="20sp"
-            android:gravity="center"
-            android:textColor="@color/colorAccent"
-            android:textStyle="bold"
-            android:text="Rate Us"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-        <RatingBar
-            android:layout_gravity="center"
-            android:layout_marginTop="20dp"
-            android:id="@+id/ratingBar1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <TextView
-            android:textColor="@color/colorAccent"
-            android:id="@+id/tvRatingScale"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:text="Awesome. I loved it"
-            android:textSize="16sp"
-            android:textStyle="bold" />
-        <TextView
-            android:layout_marginTop="40dp"
-            android:drawableLeft="@drawable/ic_group_black_24dp"
-            android:text="Our Team"
-            android:gravity="center"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="@color/colorAccent"
             android:id="@+id/team"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:drawableLeft="@drawable/ic_group_black_24dp"
+            android:gravity="center"
+            android:text="Our Team"
+            android:textColor="@color/colorAccent"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
 
         <Button
             android:background="@drawable/button"
-            android:layout_marginTop="30dp"
-            android:text="Sign out"
+            android:layout_marginTop="190dp"
+            android:text="LOgout"
             android:textSize="30dp"
             android:textStyle="bold"
             android:id="@+id/signOut"
             android:textColor="@android:color/white"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
-
-
-
-
-
-
     </LinearLayout>
-
-
-
 </FrameLayout>

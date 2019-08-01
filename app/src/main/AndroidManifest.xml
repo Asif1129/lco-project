@@ -19,7 +19,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SearchSee"></activity>
+        <activity android:name=".SearchSee"
+            android:label="Category">
+
+        </activity>
         <activity android:name=".Team" />
         <activity android:name=".Choice_new" />
         <activity android:name=".ViewDetailProfile" />

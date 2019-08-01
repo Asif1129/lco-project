@@ -55,19 +55,19 @@ public class Profile_fragments extends Fragment {
         // Inflate the layout for this fragment
         final View view= inflater.inflate(R.layout.fragment_profile_fragments, container, false);
         textView=view.findViewById(R.id.editdetail);
-        ratingBar=view.findViewById(R.id.ratingBar1);
+        //ratingBar=view.findViewById(R.id.ratingBar1);
         signout=view.findViewById(R.id.signOut);
         share=view.findViewById(R.id.shareit);
         team=view.findViewById(R.id.team);
 
-        final TextView mRatingScale =  view.findViewById(R.id.tvRatingScale);
+       // final TextView mRatingScale =  view.findViewById(R.id.tvRatingScale);
 
-        ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
-            @Override
-            public void onRatingChanged(RatingBar ratingBar, float v, boolean b) {
-
-            }
-        });
+//        ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+//            @Override
+//            public void onRatingChanged(RatingBar ratingBar, float v, boolean b) {
+//
+//            }
+//        });
         signout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View view) {
@@ -99,31 +99,31 @@ public class Profile_fragments extends Fragment {
                 shareIt();
             }
         });
-        ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
-            @Override
-            public void onRatingChanged(RatingBar ratingBar, float v, boolean b) {
-                mRatingScale.setText(String.valueOf(v));
-                switch ((int) ratingBar.getRating()) {
-                    case 1:
-                        mRatingScale.setText("Very bad");
-                        break;
-                    case 2:
-                        mRatingScale.setText("Need some improvement");
-                        break;
-                    case 3:
-                        mRatingScale.setText("Good");
-                        break;
-                    case 4:
-                        mRatingScale.setText("Great");
-                        break;
-                    case 5:
-                        mRatingScale.setText("Awesome. I love it");
-                        break;
-                    default:
-                        mRatingScale.setText("");
-                }
-            }
-        });
+//        ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+//            @Override
+//            public void onRatingChanged(RatingBar ratingBar, float v, boolean b) {
+//                mRatingScale.setText(String.valueOf(v));
+//                switch ((int) ratingBar.getRating()) {
+//                    case 1:
+//                        mRatingScale.setText("Very bad");
+//                        break;
+//                    case 2:
+//                        mRatingScale.setText("Need some improvement");
+//                        break;
+//                    case 3:
+//                        mRatingScale.setText("Good");
+//                        break;
+//                    case 4:
+//                        mRatingScale.setText("Great");
+//                        break;
+//                    case 5:
+//                        mRatingScale.setText("Awesome. I love it");
+//                        break;
+//                    default:
+//                        mRatingScale.setText("");
+//                }
+//            }
+//        });
         team.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
